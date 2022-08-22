@@ -4,26 +4,29 @@
   --primary-font-color-background-dark: rgba(0, 122, 254, 0.25);
   --primary-font-color-background-dark-active: rgba(0, 122, 254, 0.35);
 }
-.section-header {
-  padding-right: 5px !important;
+
+.cell .section-header {
+  padding: 5px !important;
 }
 
+/* Buttons */
 button { border: none; }
 button:active { opacity: 0.8; }
 
+/* Editable */
 [contenteditable] {
   color: var(--primary-font-color);
   background-color: var(--primary-font-color-background);
   padding: 5px;
   border-radius: 6px;
 }
-
 [contenteditable]:focus {
   outline: none;
   color: rgba(0, 0, 0, 1);
   background-color: rgba(0, 0, 0, 0.1);
 }
 
+/* Delete button */
 .delete {
   background-color: rgba(255, 0, 0, 0.2);
   padding: 4px;
@@ -35,6 +38,8 @@ button:active { opacity: 0.8; }
   font-size: 18px;
 }
 
+/* Add button */
+#add i { margin-right: 4px; } /* Add button icon */
 #add {
   background-color: var(--primary-font-color-background);
   padding: 10px;
@@ -48,39 +53,35 @@ button:active { opacity: 0.8; }
   text-transform: capitalize;
 }
 
+/* Dark appearance settings */
+@media (prefers-color-scheme: dark) {
+  #add {
+    background-color: var(--primary-font-color-background-dark);
+  }
+
+  #add:active {
+    opacity: 1;
+    background-color: var(--primary-font-color-background-dark-active);
+  }
+
+  [contenteditable]:focus {
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Animations & transitions */
+
+.cell {
+  animation: fade_in 0.35s;
+}
+
 #content {
   transition: transform 0.2s ease;
   transition-delay: 0.05s;
 }
 
-#uinavigationbar {
-  display: flex;
-  padding: 0 8px;
-  /* background-color: rebeccapurple; */
-}
-
-.left-bar-button-item {
-  /* background-color: red; */
-  margin-left: auto;
-}
-
-#title {
-  padding-top: 20px !important;
-}
-
-#compare {
-  margin-top: 20px;
-  background-color: unset;
-  color: var(--primary-font-color);
-  font-size: 16px;
-  text-align: right;
-}
-
-.cell {
-  animation: fade_in 0.35s ;
-}
-
-#content div[id^="item"], #add {
+#content div[id^="item"], #add, .section-footer {
   transition: transform 0.25s ease;
   transition-delay: 0.05s;
 }
@@ -92,45 +93,17 @@ button:active { opacity: 0.8; }
   transition: none !important;
 }
 
-#add i {
-  margin-right: 2px;
-}
-
-@media (prefers-color-scheme: dark) {
-  #add {
-    background-color: var(--primary-font-color-background-dark);
-  }
-  #add:active {
-    opacity: 1;
-    background-color: var(--primary-font-color-background-dark-active);
-  }
-  [contenteditable]:focus {
-    color: rgba(255, 255, 255, 1);
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-}
-
-.fadeout {
+.fade-out {
   animation: fade_out 0.25s;
   opacity: 0;
 }
 
 @keyframes fade_in {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 100%;
-  }
+  0% { opacity: 0; }
+  100% { opacity: 100%; }
 }
 
 @keyframes fade_out {
-  0% {
-    opacity: 100%;
-  }
-
-  100% {
-    opacity: 0%;
-  }
+  0% { opacity: 100%; }
+  100% { opacity: 0%; }
 }
