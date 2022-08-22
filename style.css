@@ -5,8 +5,14 @@
   --primary-font-color-background-dark-active: rgba(0, 122, 254, 0.35);
 }
 
+/* Prevent double-tap to zoom */
+body {
+  touch-action: manipulation;
+}
+
 .cell .section-header {
   padding: 5px !important;
+  font-weight: 500 !important;
 }
 
 /* Buttons */
