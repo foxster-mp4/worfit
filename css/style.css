@@ -1,0 +1,113 @@
+:root {
+  --primary-font-color: rgba(0, 122, 254, 255);
+  --primary-font-color-background: rgba(0, 122, 254, 0.1);
+  --primary-font-color-background-dark: rgba(0, 122, 254, 0.25);
+  --primary-font-color-background-dark-active: rgba(0, 122, 254, 0.35);
+}
+.section-header {
+  padding-right: 5px !important;
+}
+
+button { border: none; }
+button:active { opacity: 0.8; }
+
+[contenteditable] {
+  color: var(--primary-font-color);
+  background-color: var(--primary-font-color-background);
+  padding: 5px;
+  border-radius: 6px;
+}
+
+[contenteditable]:focus {
+  outline: none;
+  color: rgba(0, 0, 0, 1);
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.delete {
+  background-color: rgba(255, 0, 0, 0.2);
+  padding: 4px;
+  width: 28px;
+  height: 28px;
+  border-radius: 100px;
+  
+  color: rgba(255, 0, 0, 0.75);
+  font-size: 18px;
+}
+
+#add {
+  background-color: var(--primary-font-color-background);
+  padding: 10px;
+  width: 100%;
+  margin-top: 10px; 
+  border-radius: 10px;
+
+  color: var(--primary-font-color);
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+#content {
+  transition: transform 0.2s ease;
+  transition-delay: 0.05s;
+}
+
+.cell {
+  animation: fade_in 0.35s ;
+}
+
+#content div[id^="item"], #add {
+  transition: transform 0.25s ease;
+  transition-delay: 0.05s;
+}
+
+.notransition {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+}
+
+#add i {
+  margin-right: 2px;
+}
+
+@media (prefers-color-scheme: dark) {
+  #add {
+    background-color: var(--primary-font-color-background-dark);
+  }
+  #add:active {
+    opacity: 1;
+    background-color: var(--primary-font-color-background-dark-active);
+  }
+  [contenteditable]:focus {
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+.fadeout {
+  animation: fade_out 0.25s;
+  opacity: 0;
+}
+
+@keyframes fade_in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 100%;
+  }
+}
+
+@keyframes fade_out {
+  0% {
+    opacity: 100%;
+  }
+
+  100% {
+    opacity: 0%;
+  }
+}
