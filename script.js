@@ -1,8 +1,10 @@
 var itemCount = 0;
 
 $("#add").on("click", addItem);
-// loop(addItem, 5);
-addItem();
+loop(addItem, 5);
+// addItem();
+
+$("#compare").on("click", compare);
 
 function addItem() {
   const item = `
@@ -56,6 +58,10 @@ function removeItem(self) {
   // $("#content").removeClass("notransition");
   $(`#content div[id^=item], #add`).removeClass("notransition")
   
+}
+
+function compare() {
+  console.log($(".cell"))
 }
 
 function loop(action, times) {

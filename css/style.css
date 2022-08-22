@@ -53,6 +53,29 @@ button:active { opacity: 0.8; }
   transition-delay: 0.05s;
 }
 
+#uinavigationbar {
+  display: flex;
+  padding: 0 8px;
+  /* background-color: rebeccapurple; */
+}
+
+.left-bar-button-item {
+  /* background-color: red; */
+  margin-left: auto;
+}
+
+#title {
+  padding-top: 20px !important;
+}
+
+#compare {
+  margin-top: 20px;
+  background-color: unset;
+  color: var(--primary-font-color);
+  font-size: 16px;
+  text-align: right;
+}
+
 .cell {
   animation: fade_in 0.35s ;
 }
