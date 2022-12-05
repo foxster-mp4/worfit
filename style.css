@@ -54,8 +54,8 @@ button:active { opacity: 0.8; }
   border-radius: 10px;
 
   color: var(--primary-font-color);
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 700;
   text-transform: capitalize;
 }
 
